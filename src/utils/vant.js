@@ -1,6 +1,8 @@
+import Vue from "vue";
 // register vant component to Vue
-import { Button, Cell, CellGroup } from "vant";
+import { Button, NavBar, Form, Field } from "vant";
 
 Vue.use(Button)
-  .use(Cell)
-  .use(CellGroup);
+  .use(NavBar)
+  .use(Form)
+  .use(Field);

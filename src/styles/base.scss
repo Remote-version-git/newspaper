@@ -1,0 +1,8 @@
+@import "./colors.scss";
+.van-nav-bar {
+  background: $primary;
+  &__title {
+    color: $white;
+    font-size: 16px;
+  }
+}
