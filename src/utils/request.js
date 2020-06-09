@@ -3,7 +3,7 @@ import jsonBig from "json-bigint";
 
 // creating axios instance
 const instance = axios.create({
-  baseURL: "https://some-domain.com/api/",
+  baseURL: "http://ttapi.research.itcast.cn/app/",
 });
 
 // You can add interceptors to a custom instance of axios.

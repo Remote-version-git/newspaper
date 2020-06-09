@@ -14,6 +14,9 @@ import "./styles/index.scss";
 // Used to set REM reference value
 import "amfe-flexible";
 
+// ValidationProvider plugin for form validate
+import "./utils/veeValidate.js";
+
 Vue.config.productionTip = false;
 
 new Vue({
