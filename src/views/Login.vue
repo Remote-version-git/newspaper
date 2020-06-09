@@ -70,6 +70,7 @@ export default {
         const res = await login(this.user);
         console.log("登录成功", res);
         this.$toast.success("登录成功");
+        this.$router.push("/home");
       } catch (err) {
         console.log("登录失败", err);
         this.$toast.fail("登录失败， 手机号或验证码错误 ");
