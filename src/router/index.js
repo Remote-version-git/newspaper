@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Index from "../views/index/Index.vue";
 import Splash from "../views/Splash.vue";
 
 Vue.use(VueRouter);
@@ -12,9 +12,31 @@ const routes = [
     component: Splash,
   },
   {
-    path: "/home",
-    name: "home",
-    component: Home,
+    path: "/index",
+    name: "index",
+    component: Index,
+    children: [
+      {
+        path: "/index",
+        name: "home",
+        component: () => import("../views/index/children/Home.vue"),
+      },
+      {
+        path: "/answer",
+        name: "answer",
+        component: () => import("../views/index/children/Answer.vue"),
+      },
+      {
+        path: "/Video",
+        name: "video",
+        component: () => import("../views/index/children/Video.vue"),
+      },
+      {
+        path: "/my",
+        name: "my",
+        component: () => import("../views/index/children/My.vue"),
+      },
+    ],
   },
   {
     path: "/login",

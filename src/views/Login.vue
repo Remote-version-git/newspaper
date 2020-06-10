@@ -6,22 +6,29 @@
         v-model="user.mobile"
         name="mobile"
         label="手机号"
-        left-icon="phone"
+        left-icon="phone-o"
         placeholder="请输入手机号"
         required
         :rules="[
           { required: true, message: '请输入手机号' },
           { pattern: /^1\d{10}/, message: '请输入有效的手机号码' },
         ]"
-      />
+      >
+        <template #left-icon>
+          <i class="iconfont icon-phone"></i>
+        </template>
+      </van-field>
       <van-field
         v-model="user.code"
-        left-icon="lock"
+        left-icon="[user.? ]"
         name="code"
         label="验证码"
         placeholder="请输入验证码"
         :rules="[{ required: true, message: '请输入验证码' }, { pattern: /^\d{6}$/, message: '请输入6位的验证码' }]"
       >
+        <template #left-icon>
+          <i class="iconfont icon-ecurityCode"></i>
+        </template>
         <template #button>
           <van-count-down
             :time="60 * 1000"
@@ -67,12 +74,11 @@ export default {
         message: "登录中..."
       });
       try {
-        const res = await login(this.user);
-        console.log("登录成功", res);
+        const { data: res } = await login(this.user);
+        this.$store.commit("setUser", res.data);
         this.$toast.success("登录成功");
         this.$router.push("/home");
       } catch (err) {
-        console.log("登录失败", err);
         this.$toast.fail("登录失败， 手机号或验证码错误 ");
       }
     },
@@ -91,11 +97,10 @@ export default {
           "验证码已发送到".concat(res.data.mobile).concat("手机号中")
         );
       } catch (e) {
-        const errMsg = e.toString();
-        if (errMsg.includes("404")) {
+        if (e.response.status === 404) {
           this.$toast.fail("手机号不正确");
-        } else if (errMsg.includes("429")) {
-          this.$toast.fail("发送验证码太频繁，请稍后再试");
+        } else if (e.response.status === 429) {
+          this.$toast.fail("发送验证码太频繁，请一分钟后再试");
         }
       }
     },
@@ -121,5 +126,8 @@ export default {
 }
 .news-captcha {
   color: #666666 !important;
+}
+.news-login .van-count-down {
+  color: #ccc;
 }
 </style>
