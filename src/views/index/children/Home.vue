@@ -1,10 +1,10 @@
 <template>
   <div class="news-home">
     <!-- 标题 -->
-    <van-nav-bar>
+    <van-nav-bar fixed placeholder>
       <van-button slot="title" plain icon="search">搜索</van-button>
     </van-nav-bar>
-    <van-tabs v-model="active">
+    <van-tabs v-model="active" sticky offset-top="46">
       <!-- 频道 -->
       <van-tab v-for="item in channels" :key="item.id" :title="item.name">
         <!-- 列表 -->
