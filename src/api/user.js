@@ -1,5 +1,6 @@
 import request from "../utils/request.js";
 
+// 登录/注册
 export const login = (data) => {
   return request({
     method: "POST",
@@ -8,6 +9,7 @@ export const login = (data) => {
   });
 };
 
+// 发送验证码
 export const sendCaptcha = (mobile) => {
   return request({
     method: "GET",

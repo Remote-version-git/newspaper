@@ -9,6 +9,10 @@ import {
   CountDown,
   Tabbar,
   TabbarItem,
+  List,
+  Cell,
+  Tab,
+  Tabs,
 } from "vant";
 
 Vue.use(Button)
@@ -18,4 +22,8 @@ Vue.use(Button)
   .use(Toast)
   .use(CountDown)
   .use(Tabbar)
-  .use(TabbarItem);
+  .use(TabbarItem)
+  .use(List)
+  .use(Cell)
+  .use(Tabs)
+  .use(Tab);

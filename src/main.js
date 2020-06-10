@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 
 // import register vant library file
-import "./utils/vant";
+import "./plugins/vant";
 
 // warning: please first import ui library for easy custom style override library default style
 
@@ -15,7 +15,7 @@ import "./styles/index.scss";
 import "amfe-flexible";
 
 // ValidationProvider plugin for form validate
-import "./utils/veeValidate.js";
+import "./plugins/veeValidate.js";
 
 Vue.config.productionTip = false;
 
