@@ -1,7 +1,7 @@
 <template>
   <div class="Index">
     <router-view />
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" placeholder>
       <van-tabbar-item to="/index">
         <span>首页</span>
         <template #icon>
