@@ -59,6 +59,7 @@ export default {
     };
   },
   methods: {
+    // 上拉刷新
     async onLoad() {
       // 获取对应频道数据对象
       const activeChannel = this.channels[this.active];
@@ -83,11 +84,24 @@ export default {
         activeChannel.finished = true;
       }
     },
-    onRefresh() {
-      setTimeout(() => {
-        this.$toast.success("刷新成功");
-        this.isLoading = false;
-      }, 2000);
+    // 下拉刷新
+    async onRefresh() {
+      const activeChannel = this.channels[this.active];
+      const { data: res } = await getArticles({
+        channel_id: activeChannel.id,
+        timestamp: Date.now(),
+        with_top: 1
+      });
+      const articles = res.data.results;
+      // 往当前激活频道文章数组开头添加展开的文章对象
+      activeChannel.articles.unshift(...articles);
+      // 表示此次装载结束
+      this.isLoading = false;
+      // 提示
+      const message = articles.length
+        ? `更新了${articles.length}条数据`
+        : "无数据更新";
+      this.$toast(message);
     }
   }
 };
