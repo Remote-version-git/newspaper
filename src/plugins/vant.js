@@ -14,6 +14,10 @@ import {
   Tab,
   Tabs,
   PullRefresh,
+  Grid,
+  GridItem,
+  Image,
+  Lazyload,
 } from "vant";
 
 Vue.use(Button)
@@ -28,4 +32,8 @@ Vue.use(Button)
   .use(Cell)
   .use(Tabs)
   .use(Tab)
-  .use(PullRefresh);
+  .use(PullRefresh)
+  .use(Grid)
+  .use(GridItem)
+  .use(Image)
+  .use(Lazyload);

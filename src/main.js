@@ -17,6 +17,9 @@ import "amfe-flexible";
 // ValidationProvider plugin for form validate
 import "./plugins/veeValidate.js";
 
+// 导入时间处理插件
+import "./plugins/dayjs";
+
 Vue.config.productionTip = false;
 
 new Vue({
