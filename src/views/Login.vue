@@ -77,7 +77,7 @@ export default {
         const { data: res } = await login(this.user);
         this.$store.commit("setUser", res.data);
         this.$toast.success("登录成功");
-        this.$router.push("/home");
+        this.$router.push("/index");
       } catch (err) {
         this.$toast.fail("登录失败， 手机号或验证码错误 ");
       }

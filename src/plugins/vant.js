@@ -13,6 +13,7 @@ import {
   Cell,
   Tab,
   Tabs,
+  PullRefresh,
 } from "vant";
 
 Vue.use(Button)
@@ -26,4 +27,5 @@ Vue.use(Button)
   .use(List)
   .use(Cell)
   .use(Tabs)
-  .use(Tab);
+  .use(Tab)
+  .use(PullRefresh);

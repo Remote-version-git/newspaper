@@ -1,15 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { setItem, getItem } from "@/utils/localStorage.js";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: JSON.parse(localStorage.getItem("user")),
+    user: getItem(),
   },
   mutations: {
     setUser(state, data) {
-      localStorage.setItem("user", JSON.stringify(data));
+      setItem("user", data);
     },
   },
   actions: {},
