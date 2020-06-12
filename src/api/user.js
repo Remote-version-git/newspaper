@@ -16,3 +16,8 @@ export const sendCaptcha = (mobile) => {
     url: "/v1_0/sms/codes/" + mobile,
   });
 };
+
+// 获取用户频道
+export const getUserChannels = () => {
+  return request.get("/v1_0/user/channels");
+};
