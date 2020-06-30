@@ -3,7 +3,7 @@ import jsonBig from "json-bigint";
 // 引入Vuex
 import store from "@/store";
 // 因为涉及到路由跳转，在刷新令牌处理时，所以引入路由模块
-import router from "@/router";
+import router from "../router/index.js";
 
 // 导入配置文件
 import axiosConfig from "@/config/axios.config.js";

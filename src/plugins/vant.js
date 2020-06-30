@@ -11,6 +11,7 @@ import {
   TabbarItem,
   List,
   Cell,
+  CellGroup,
   Tab,
   Tabs,
   PullRefresh,
@@ -20,6 +21,7 @@ import {
   Lazyload,
   Popup,
   Icon,
+  Search,
 } from "vant";
 
 Vue.use(Button)
@@ -31,7 +33,7 @@ Vue.use(Button)
   .use(Tabbar)
   .use(TabbarItem)
   .use(List)
-  .use(Cell)
+  .use(Cell).use(CellGroup)
   .use(Tabs)
   .use(Tab)
   .use(PullRefresh)
@@ -40,4 +42,4 @@ Vue.use(Button)
   .use(Image)
   .use(Lazyload)
   .use(Popup)
-  .use(Icon);
+  .use(Icon).use(Search);

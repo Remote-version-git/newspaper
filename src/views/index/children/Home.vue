@@ -2,7 +2,7 @@
   <div class="news-home">
     <!-- 标题 -->
     <van-nav-bar fixed placeholder>
-      <van-button slot="title" plain icon="search">搜索</van-button>
+      <van-button slot="title" type="info" icon="search" size="mini" round @click="$router.push({ path: '/search' })">搜索</van-button>
     </van-nav-bar>
     <!-- 频道 -->
     <van-tabs v-model="active" sticky offset-top="46">
@@ -39,6 +39,7 @@
           </van-list>
         </van-pull-refresh>
       </van-tab>
+      <!-- 导航频道编辑按钮 -->
       <div slot="nav-right" class="wap-nav" @click="isChannelShow = true">
         <van-icon name="wap-nav" size="24" />
       </div>

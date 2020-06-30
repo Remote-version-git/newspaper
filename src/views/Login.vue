@@ -47,7 +47,7 @@
           >发送验证码</van-button>
         </template>
       </van-field>
-      <div style="margin: 16px;">
+      <div>
         <van-button class="news-login-btn" block type="info" native-type="submit">登录</van-button>
       </div>
     </van-form>
