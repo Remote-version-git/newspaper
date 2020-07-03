@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index/Index.vue";
 import Splash from "../views/Splash.vue";
-
+import Article from "@/views/article";
 Vue.use(VueRouter);
 
 const routes = [
@@ -51,6 +51,12 @@ const routes = [
   {
     path: '/search/:keywords',
     component: () => import('../views/SearchResult/index.vue'),
+  },
+  {
+    name: 'article',
+    path: '/article/:articleId',
+    component: Article,
+    props: true,
   }
 ];
 

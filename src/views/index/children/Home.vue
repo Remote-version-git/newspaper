@@ -2,7 +2,14 @@
   <div class="news-home">
     <!-- 标题 -->
     <van-nav-bar fixed placeholder>
-      <van-button slot="title" type="info" icon="search" size="mini" round @click="$router.push({ path: '/search' })">搜索</van-button>
+      <van-button
+        slot="title"
+        type="info"
+        icon="search"
+        size="mini"
+        round
+        @click="$router.push({ path: '/search' })"
+      >搜索</van-button>
     </van-nav-bar>
     <!-- 频道 -->
     <van-tabs v-model="active" sticky offset-top="46">
@@ -20,6 +27,12 @@
               v-for="article in channel.articles"
               :key="article.art_id.toString()"
               :title="article.title"
+              @click="$router.push({
+                name: 'article',
+                params: {
+                  articledId: article.art_id
+                }
+              })"
             >
               <template slot="label">
                 <!-- 图片 -->
